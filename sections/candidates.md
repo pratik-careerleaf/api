@@ -20,7 +20,7 @@ It is recommended to provide exact data for profile if it's available. Resume pa
 
 
 
-### Create new candidate
+## Create new candidate
 
     POST /app/api/v1/candidates
 
@@ -207,7 +207,7 @@ So, the redirect rule will be similar to:
     /applicant-(\d+)-view -> /app/profile/by-old-id/$1
 
 
-### quick list 
+## quick list 
 
 `GET /app/api/v1/candidates/quick-list/` 
 
@@ -256,13 +256,13 @@ This endpoint can be used to quickly iterate through all records in the database
 ```
 
 
-### single record 
+## Getting single record 
 
 response includes all the writable fields, accepted on creation with some *read only* fields 
 [example of response](https://github.com/careerleaf/api/blob/master/sections/candidates_get.md)
 
 
-## Resume upload 
+# Resume upload 
 
 
 
