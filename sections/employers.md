@@ -97,8 +97,7 @@ pagination options
         }
       ]
     }
-    // more records ... 
-    ]
+  ]
 }
 
 ```
