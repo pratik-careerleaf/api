@@ -29,16 +29,15 @@ NOTE: it's not a correct json document (because of js comments in there), the ac
 ```js
 
 {
-      "name": "T Hosp",
-      "url": "http://example1.com",
+      "name": "T Hosp", // required
+      "url": "http://example1.com", // optional
       "old_id": "12345", // optional, set it to reuse during migration re-run
       "description": "Aenean vulputate eleifend tellus...",
-      "users": [
+      "users": [ // must have at least one item 
         {
-          "id": "54be99e3ae36ba1a6006efe3",
-          "first_name": "Kristin",
-          "last_name": "V",
-          "email": "kv@example1.com",
+          "first_name": "Kristin", // required
+          "last_name": "V", // required
+          "email": "kv@example1.com", // required
           "access_group": "admin"   // possible options (admin, LA) ("LA" - limited access), default is "admin"
         }
       ]
