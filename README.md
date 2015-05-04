@@ -30,6 +30,9 @@ curl -H "Authentication: CL $auth_token" -X GET $url/app/api/v1/candidates
 
 User friendly alternative of using command line is a browser extension, like [Advanced REST client](https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo)
 
+#### Requests Content Type 
+When sending data with `POST`, `PUT` or `PATCH` request, make sure that `Content-Type` header is set to `application/json`
+
 
 ### Pagination 
 Some api endpoints return pagniated data (all lists). You can control page size with `page_size` query string parameter. The actual page is controlled with `page` parameter (1 by default).
