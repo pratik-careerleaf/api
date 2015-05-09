@@ -172,7 +172,7 @@ NOTE: it's not a correct json document (because of js comments in there), the ac
 
 * `GET /app/api/v1/profile-options/degrees/` -> **Education Degree** options 
 * `GET /app/api/v1/profile-options/position-types/` -> **Position Types**
-* `GET /app/api/v1/industries` -> **Industries**
+* `GET /app/api/v1/profile-options/industries/` -> **Industries**
 * **Geographical preferences** (field `geo_pref` on profile), available options are: 
 
 ```python
