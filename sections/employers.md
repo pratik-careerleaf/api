@@ -1,6 +1,6 @@
 # Employers data
 
-Use this API to migrate your existing employers (company info and users) to Careerleaf platform
+Use this API to migrate your existing employers (company info and users) to the Careerleaf platform
 
 
 
@@ -24,7 +24,7 @@ Use this API to migrate your existing employers (company info and users) to Care
 
 #### Request BODY
 
-NOTE: it's not a correct json document (because of js comments in there), the actual request must contain valid json value in the request body (see GET response for sample of json)
+Note: the following is not a valid *JSON* document, given that it has comments. Your actual request shouldn't have them. Take a look at the sample GET response below for an example of valid JSON.
 
 ```js
 
@@ -33,6 +33,18 @@ NOTE: it's not a correct json document (because of js comments in there), the ac
       "url": "http://example1.com", // optional
       "old_id": "12345", // optional, set it to reuse during migration re-run
       "description": "Aenean vulputate eleifend tellus...",
+      // Not required
+      "billing_address":{
+        "city": "Miami",
+        "fax": "0000000000",
+        "country": "United States",
+        "street2": "",
+        "phone": "0000000000",
+        "state": "Florida",
+        "street": "Street",
+        "postal_code": "XXXXXX",
+        "country_code": "US"
+      }
       "users": [ // must have at least one item 
         {
           "first_name": "Kristin", // required
@@ -69,6 +81,19 @@ pagination options
       "old_id": null,
       "created_on": "2015-01-20T18:09:40.919",
       "description": null,
+      "billing_address": {
+        "city": "Miami",
+        "fax": "0000000000",
+        "country": "United States",
+        "street2": "",
+        "phone": "0000000000",
+        "state": "Florida",
+        "street": "Street",
+        "postal_code": "XXXXXX",
+        "country_code": "US",
+        "geo_lat_lng": null,
+        "state_id": 15
+    },
       "users": [
         {
           "id": "54be99e3ae36ba1a6006efe3",
@@ -84,6 +109,18 @@ pagination options
       "name": "ashley",
       "url": null,
       "old_id": null,
+      "billing_address": {
+        "postal_code": "",
+        "street": "Street",
+        "street2": "",
+        "city": "Denver",
+        "state": "Colorado",
+        "state_id": 15,
+        "country": "United States",
+        "country_code": "US",
+        "phone": null,
+        "fax": null
+      },
       "created_on": "2015-01-21T05:46:48.240",
       "description": null,
       "users": [
@@ -101,7 +138,7 @@ pagination options
 
 ```
 
-## Quck List of employers
+## Quck list of employers
 
 use it to quickly iterate through existing records, that can be useful during migration re-run
 
