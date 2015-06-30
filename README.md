@@ -1,5 +1,13 @@
-Careerleaf API
-=============================
+Javascript API 
+=====================
+
+* [Job Roll widget](https://github.com/careerleaf/api/blob/master/js/job-roll.md)
+
+
+
+
+Web Services API
+======================
 
 Looking to migrate your data to Careerleaf platform? We've got everything you need here. From sample code to detailed API documentation.
 
@@ -78,6 +86,7 @@ API ready for use
 -----------------
 * [Candidates data](https://github.com/careerleaf/api/blob/master/sections/candidates.md)
 * [Employers data](https://github.com/careerleaf/api/blob/master/sections/employers.md)
+* [Job Search](https://github.com/careerleaf/api/blob/master/sections/job-search.md)
 
 
 
