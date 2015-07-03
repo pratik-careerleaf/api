@@ -10,18 +10,22 @@ It is a javascript layer on top of [job search][job-search-api] public API. Form
 
 Include jobs widgets js file 
 
-    <script src="http://*job-board-url*/static/dist/widgets/jobs.js"></script>
+    <script src="http://*job-board-url*/static/dist/widgets/jobs.js" async ></script>
+
+*note*: `async` make it more efficient rendering, especially on mobile devices, you must use onload handler in if async is used
 
 
-In the additional `<script></script>` create `JobRoll` js object with proper search parameters. 
+In the additional inline `<script></script>` or another js file in onload callback create `JobRoll` js object with proper search parameters. 
 
 
-Do not forget to include custom css rules. Job roll content is added dynamically to DOM and you have full control over styles.
+Do not forget to include custom css rules. Job roll content is added dynamically to DOM and you have full control over styles. You can start with [basic jobroll css styling][jobroll-css].
 
 ### Basic usage
 
 ```js
-    
+
+
+function initJobRoll(){
     // configure widget by providing base url of the board to receive data from
      careerleaf.init({
         baseUrl: 'http://example.com'
@@ -43,15 +47,29 @@ Do not forget to include custom css rules. Job roll content is added dynamically
 
      // show jobs on the page, first paramter is a container: selector or DOM element
      var jobroll = new careerleaf.jobs.JobRoll('#jobs', search);
+}
+
+/// attach to onload handler
+
+/// with jQuery or other library 
+jQuery(initJobRoll);
+// or simply 
+// window.onload = initJobRoll;
+
+
 ```
 
 See full list of filtering options in [job-search][job-search-api] web service api.
+For `job_types, companies and categories` exception will be thrown if matching filtering option cannot be found using information provided.
 
 
 ### Events 
 
 ```js 
     jobroll.on('loaded', function(e){
+        if(e.data.total == 0){
+            $("#jobroll-container").hide();
+        }
         console.log('loaded')
     })
 
@@ -105,3 +123,4 @@ service.search(search)
 
 
 [job-search-api]: https://github.com/careerleaf/api/blob/master/sections/job-search.md
+[jobroll-css]: https://github.com/careerleaf/api/blob/master/js/jobroll-css.md
