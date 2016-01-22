@@ -293,7 +293,7 @@ if successful 201 status code
 
 ## Download resume 
 
-* `POST /app/api/v1/candidates/$id/resumes/$resume_id` 
+* `GET /app/api/v1/candidates/$id/resumes/$resume_id` 
 
 where 
 `resume_id` can be ObjectId or `auto` literal
