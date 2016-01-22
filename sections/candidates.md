@@ -262,9 +262,10 @@ response includes all the writable fields, accepted on creation with some *read 
 [example of response](https://github.com/careerleaf/api/blob/master/sections/candidates_get.md)
 
 
-# Resume upload 
+# Resumes 
 
 
+## Upload resume
 
 The job seeker profile must be already created before uploading resume, it can be empty with only mandatory info filled in (user details)
 
@@ -289,6 +290,14 @@ required The file contents to be uploaded. Since the entire POST body will be tr
 
 if successful 201 status code
 
+
+## Download resume 
+
+* `POST /app/api/v1/candidates/$id/resumes/$resume_id` 
+
+where 
+`resume_id` can be ObjectId or `auto` literal
+When `auto` is requested, it will return PDF resume automatically generated based on profile data
 
 
 # References 
