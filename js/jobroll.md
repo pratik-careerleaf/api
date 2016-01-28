@@ -10,7 +10,7 @@ It is a javascript layer on top of [job search][job-search-api] public API. Form
 
 Include jobs widgets js file 
 
-    <script src="http://*job-board-url*/static/dist/widgets/jobs.js" async ></script>
+    <script src="http://*job-board-url*/static/dist/widgets/jobs.js" ></script>
 
 *note*: `async` make it more efficient rendering, especially on mobile devices, you must use onload handler in if async is used
 
@@ -51,9 +51,9 @@ function initJobRoll(){
 
 /// attach to onload handler
 
-/// with jQuery or other library 
-jQuery(initJobRoll);
-// or simply 
+/// on document load
+document.addEventListener("DOMContentLoaded", initJobRoll);
+// or simply  or jQuery.ready 
 // window.onload = initJobRoll;
 
 
