@@ -1,6 +1,6 @@
 # Job search
 
-`since v2.18`
+`since v2.29`
 
 This API does not require authentication (in it's current implementation). You can use `POST` or `GET` requests to obtain data. It can also be used to make CORS requests using javascript.
 
@@ -40,7 +40,9 @@ example
             {
                 "name": "Richmond Company"
             }
-        ]
+        ],
+        "only_featured": false,
+        "only_external": false
     }
 ```
 
@@ -70,6 +72,9 @@ e.g. `"jobtypes": [{"slug": "full_time"}, {"name": "Contract"}]`
 - `id` - company id 
 - `name` - company name 
 
+`only_featured`  When set to `true`, the response will only include featured jobs. Default value is `false`. 
+
+`only_internal` - When set to `true`, the response will only include internal jobs. Default value is `false`. 
 
 
 ## Simple mode
