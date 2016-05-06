@@ -42,7 +42,7 @@ example
             }
         ],
         "only_featured": false,
-        "only_external": false
+        "only_internal": false
     }
 ```
 
