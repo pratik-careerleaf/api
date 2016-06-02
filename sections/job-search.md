@@ -121,8 +121,8 @@ In this mode the search object is passed as json serialized string in `search` q
             "logo_url": "http://example.com/app/jobs/company/53dba8bdbe58755f104f5469/logo?ts=1412361824", 
             "summary": "short", 
             "updated_on": "2015-06-24T12:05:49.794",
-            "date_posted": "2015-01-10T12:05:49.794",
-            "date_expires": "2015-07-4T12:05:49.794",
+            "date_posted": "2015-01-10T12:05:49.794", // from 2.29
+            "date_expires": "2015-07-4T12:05:49.794", // from 2.29
             "location": {
                 "full_name": "Toronto, Ontario, CA", 
                 "city": "Toronto", 
