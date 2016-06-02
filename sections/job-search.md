@@ -41,8 +41,8 @@ example
                 "name": "Richmond Company"
             }
         ],
-        "only_featured": false,
-        "only_internal": false
+        "only_featured": false, // from 2.29
+        "only_internal": false  // from 2.29
     }
 ```
 
