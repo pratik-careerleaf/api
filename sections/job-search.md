@@ -23,7 +23,7 @@ In this mode paramters must be provided as `application/json` request
 
 example
 
-```json
+```js
 {
         "keywords": "test", 
         "location": {
