@@ -23,7 +23,7 @@ In this mode paramters must be provided as `application/json` request
 
 example
 
-```json
+```js
 {
         "keywords": "test", 
         "location": {
@@ -40,7 +40,9 @@ example
             {
                 "name": "Richmond Company"
             }
-        ]
+        ],
+        "only_featured": false, // from 2.29
+        "only_internal": false  // from 2.29
     }
 ```
 
@@ -70,6 +72,9 @@ e.g. `"jobtypes": [{"slug": "full_time"}, {"name": "Contract"}]`
 - `id` - company id 
 - `name` - company name 
 
+`only_featured`  When set to `true`, the response will only include featured jobs. Default value is `false`. 
+
+`only_internal` - When set to `true`, the response will only include internal jobs. Default value is `false`. 
 
 
 ## Simple mode
