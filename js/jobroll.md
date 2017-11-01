@@ -96,8 +96,9 @@ It is possible to provide custom template
 ```
 
 ### Box Template Usage
-// Remove Comments
+Remove Comments
 
+```js
 // include jobs widgets js file
 <script src="http://*job-board-url*/static/dist/widgets/jobs.js"></script>
 
@@ -122,7 +123,8 @@ var template = "jobsRollBox";
 //Initialise the jobroll widget
 <script>careerleaf.jobs.initJobRoll(website_url,keyword,city,categories,template);</script>
 
-// careerleaf.jobs.initJobRoll uses `JobRoll` widget
+```
+careerleaf.jobs.initJobRoll uses `JobRoll` widget
 
 # Services
 
