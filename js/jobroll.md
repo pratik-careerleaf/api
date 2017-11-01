@@ -40,8 +40,8 @@ function initJobRoll(){
             city: 'Toronto', 
             country: 'CA',
         }, 
-        job_types: [{slug: 'contract'}, {slug: 'full_time'}],  
-        companies: [{name: "Richmond Company"}], 
+        job_types: [{slug: 'contract'}, {slug: 'full_time'}],  //Not working
+        companies: [{name: "Richmond Company"}], 		//Not working
         categories: [{name: "Advertising"}]
      }
 
@@ -80,7 +80,7 @@ currently supported events are:
 - `error` - triggered when service fails to load data 
 
 
-### Custom Templte
+### Custom Template
 
 It is possible to provide custom template 
 
@@ -94,6 +94,35 @@ It is possible to provide custom template
      var jobroll2 = new careerleaf.jobs.JobRoll('#jobs2', search, options);
 
 ```
+
+### Box Template Usage
+// Remove Comments
+
+// include jobs widgets js file
+<script src="http://*job-board-url*/static/dist/widgets/jobs.js"></script>
+
+//define Params
+<script type="text/javascript">
+//Search parameters (currently it only supports parameters keyword, city and categories, all are optional)
+var keyword="Sales Manager";
+var city="Swindon";
+var categories="Sales";
+// Base URL of the board to recieve data from
+var website_url="https://*job-board-url*/";
+// maps to BOX template instead of the default
+var template = "jobsRollBox";
+</script>
+
+<div class="main-container">
+//Dom element of the container
+<div id="jobs">&nbsp;</div>
+<style></style>
+</div>
+
+//Initialise the jobroll widget
+<script>careerleaf.jobs.initJobRoll(website_url,keyword,city,categories,template);</script>
+
+// careerleaf.jobs.initJobRoll uses `JobRoll` widget
 
 # Services
 
