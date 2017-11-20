@@ -33,6 +33,7 @@ Note: the following is not a valid *JSON* document, given that it has comments. 
       "url": "http://example1.com", // optional
       "old_id": "12345", // optional, set it to reuse during migration re-run
       "description": "Aenean vulputate eleifend tellus...",
+      "logo_url":"http://example1.com/image.jpg",
       // Not required
       "billing_address":{
         "city": "Miami",
