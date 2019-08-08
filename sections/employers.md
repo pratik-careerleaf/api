@@ -63,9 +63,8 @@ Note: the following is not a valid *JSON* document, given that it has comments. 
     GET /app/api/v1/employers
 
 ### Parameters 
-
-pagination options 
-
+    page_kwarg = 'page'
+    paginate_by_param = 'page_size' (the maximum page_size is restricted to 100)
 
 ### Response 
 
@@ -148,8 +147,8 @@ use it to quickly iterate through existing records, that can be useful during mi
 
 ### Parameters 
 
-pagination options 
-
+    page_kwarg = 'page'
+    paginate_by_param = 'page_size' (the maximum page_size is restricted to 500)
 
 ### Response 
 
