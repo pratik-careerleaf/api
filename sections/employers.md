@@ -23,38 +23,57 @@ Use this API to migrate your existing employers (company info and users) to the 
 
 
 #### Request BODY
+Below sample data will create employer 'ABC INC' with 3 companies 'ABC INC', 'ABC Consultancy' and 'ABC Exports' and 2 users. 
+By default 'ABC INC' will be the default company. However, the flag 'is_default=1' will overwiter and make 'ABC Consultancy' as default company.
 
 Note: the following is not a valid *JSON* document, given that it has comments. Your actual request shouldn't have them. Take a look at the sample GET response below for an example of valid JSON.
 
 ```js
 
 {
-      "name": "T Hosp", // required
-      "url": "http://example1.com", // optional
-      "old_id": "12345", // optional, set it to reuse during migration re-run
-      "description": "Aenean vulputate eleifend tellus...",
-      "logo_url":"http://example1.com/image.jpg",
-      // Not required
+      "name": "ABC Inc", //required
+      "site_url": "https://abc.com",
+      "old_id": "abc123", //required
       "billing_address":{
         "city": "Miami",
-        "fax": "0000000000",
-        "country": "United States",
+        "fax": "+1 323 555 1234",
+        "country": "United States", //required
         "street2": "",
-        "phone": "0000000000",
+        "phone": "+1-541-754-3010",
         "state": "Florida",
         "street": "Street",
-        "postal_code": "XXXXXX",
+        "postal_code": "32024",
         "country_code": "US"
-      }
-      "users": [ // must have at least one item 
+      },
+      "users": [
         {
-          "first_name": "Kristin", // required
-          "last_name": "V", // required
-          "email": "kv@example1.com", // required
-          "access_group": "admin"   // possible options (admin, LA) ("LA" - limited access), default is "admin"
+          "first_name": "Admin", //required
+          "last_name": "V",
+          "email": "admin@abc.com", //required
+          "access_group": "admin"
+        },
+      {
+          "first_name": "Kristin", //required
+          "last_name": "may", 
+          "email": "km@example.com", //required
+          "access_group": "LA" 
+        }],
+        "companies":[
+        {
+          "name": "ABC Consultancy", //required
+          "url": "https://abcconsultancy.com",
+          "desc": "Description for ABC Consultancy", //company description
+          "is_default": 1, //Default company
+          "logo_url": "https://i2.wp.com/storage.whmcs.community/monthly_2017_09/T.png.f6c2896bc17da48204db15019ed38915.png"
+        },
+         {
+          "name": "ABC Exports", //required
+          "url": "https://abcexports.com",
+          "desc": "Description for ABC Exports", //company description
+          "is_default": 0
         }
-      ]
-    }
+        ]
+}
 ```
 
 
