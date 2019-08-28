@@ -130,7 +130,8 @@ Note: the following is not a valid *JSON* document, given that it has comments. 
     'state_id': 147,
     'street': '25 Street   ',
     'street2': None},
-},
+}
+}
    {
  'name': 'XYZ Inc',
  'old_id': 'xyz123',
