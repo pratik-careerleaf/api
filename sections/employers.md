@@ -94,63 +94,73 @@ Note: the following is not a valid *JSON* document, given that it has comments. 
   "previous": null,
   "results": [
     {
-      "id": "54be99e3ae36ba1a6006efe2",
-      "name": "T Hosp",
-      "url": null,
-      "old_id": null,
-      "created_on": "2015-01-20T18:09:40.919",
-      "description": null,
-      "billing_address": {
-        "city": "Miami",
-        "fax": "0000000000",
-        "country": "United States",
-        "street2": "",
-        "phone": "0000000000",
-        "state": "Florida",
-        "street": "Street",
-        "postal_code": "XXXXXX",
-        "country_code": "US",
-        "geo_lat_lng": null,
-        "state_id": 15
-    },
-      "users": [
-        {
-          "id": "54be99e3ae36ba1a6006efe3",
-          "first_name": "Kristin",
-          "last_name": "V",
-          "email": "krubia@yyyy.com",
-          "access_group": "admin"
-        }
-      ]
-    },
-    {
-      "id": "54bf3d47ae36ba1a6006efe8",
-      "name": "ashley",
-      "url": null,
-      "old_id": null,
-      "billing_address": {
-        "postal_code": "",
-        "street": "Street",
-        "street2": "",
-        "city": "Denver",
-        "state": "Colorado",
-        "state_id": 15,
-        "country": "United States",
-        "country_code": "US",
-        "phone": null,
-        "fax": null
-      },
-      "created_on": "2015-01-21T05:46:48.240",
-      "description": null,
-      "users": [
-        {
-          "id": "54bf3d47ae36ba1a6006efe9",
-          "first_name": "ashley",
-          "last_name": "ashley",
-          "email": "acentola@yyyy.com",
-          "access_group": "admin"
-        }
-      ]
+ 'name': 'ABC Inc',
+ 'old_id': 'abc123',
+ 'site_url': 'https://abc.com',
+ 'created_on': '2019-08-28T05:26:03.848',
+ 'def_company': 'ABC Consultancy',
+ 'id': '5d66106b0640fd7805f807e2',
+ 'billing_address': {'city': 'Miami',
+  'country': 'United States',
+  'country_code': 'US',
+  'fax': '+1 323 555 1234',
+  'phone': '+1-541-754-3010',
+  'postal_code': '32024',
+  'state': 'Florida',
+  'state_id': 54,
+  'street': 'Street',
+  'street2': ''},
+ 'companies': [
+	{'desc': None, 'name': 'ABC Inc', 'url': None},
+	{'desc': 'Description for ABC Exports','name': 'ABC Exports','url': 'https://abcexports.com'},
+	{'desc': 'Description for ABC Consultancy', 'name': 'ABC Consultancy','url': 'https://abcconsultancy.com'},
+	],
+ 'users': [
+	{'first_name': 'Admin', 'id': '5d66106c0640fd7805f807e6', 'last_name': 'V','access_group': 'admin', 'email': 'admin@abc.com'},
+	{,'first_name': 'Kristin', 'id': '5d66106c0640fd7805f807e7','last_name': 'may','access_group': 'LA', 'email': 'km@example.com'}]},
+},
+{'billing_address': {
+    'city': 'Toronto',
+    'country': 'Burkina Faso',
+    'country_code': 'BF',
+    'fax': None,
+    'phone': '9090909090',
+    'postal_code': 'L9j4A7',
+    'state': 'British Columbia',
+    'state_id': 147,
+    'street': '25 Street   ',
+    'street2': None},
+},
+   {
+ 'name': 'XYZ Inc',
+ 'old_id': 'xyz123',
+ 'site_url': 'https://xyz.com',
+ 'created_on': '2018-08-28T05:26:03.848',
+ 'def_company': 'XYZ Consultancy',
+ 'id': '4d66106b0640fd7805f807e2',
+ {'billing_address': {
+    'city': 'Toronto',
+    'country': 'Burkina Faso',
+    'country_code': 'BF',
+    'fax': None,
+    'phone': '9090909090',
+    'postal_code': 'L9j4A7',
+    'state': 'British Columbia',
+    'state_id': 147,
+    'street': '25 Street   ',
+    'street2': None},
+},
+ 'companies': [
+	{'desc': None, 'name': 'XYZ Inc', 'url': None},
+	{'desc': 'Description for XYZ Exports','name': 'ABC Exports','url': 'https://abcexports.com'},
+	{'desc': 'Description for XYZ Consultancy', 'name': 'ABC Consultancy','url': 'https://abcconsultancy.com'},
+	],
+ 'users': [
+	{'first_name': 'Admin', 'id': '5d66106c0640fd7805f8078', 'last_name': 'V','access_group': 'admin', 'email': 'admin@xyz.com'},
+	{,'first_name': 'Kris', 'id': '5d66106c0640fd7805f807','last_name': 'may','access_group': 'LA', 'email': 'km@example.com'}]},
+},
+
+    ]
     }
   ]
 }
