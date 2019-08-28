@@ -93,76 +93,65 @@ Note: the following is not a valid *JSON* document, given that it has comments. 
   "next": null,
   "previous": null,
   "results": [
-    {
- 'name': 'ABC Inc',
- 'old_id': 'abc123',
- 'site_url': 'https://abc.com',
- 'created_on': '2019-08-28T05:26:03.848',
- 'def_company': 'ABC Consultancy',
- 'id': '5d66106b0640fd7805f807e2',
- 'billing_address': {'city': 'Miami',
-  'country': 'United States',
-  'country_code': 'US',
-  'fax': '+1 323 555 1234',
-  'phone': '+1-541-754-3010',
-  'postal_code': '32024',
-  'state': 'Florida',
-  'state_id': 54,
-  'street': 'Street',
-  'street2': ''},
- 'companies': [
-	{'desc': None, 'name': 'ABC Inc', 'url': None},
-	{'desc': 'Description for ABC Exports','name': 'ABC Exports','url': 'https://abcexports.com'},
-	{'desc': 'Description for ABC Consultancy', 'name': 'ABC Consultancy','url': 'https://abcconsultancy.com'},
-	],
- 'users': [
-	{'first_name': 'Admin', 'id': '5d66106c0640fd7805f807e6', 'last_name': 'V','access_group': 'admin', 'email': 'admin@abc.com'},
-	{,'first_name': 'Kristin', 'id': '5d66106c0640fd7805f807e7','last_name': 'may','access_group': 'LA', 'email': 'km@example.com'}]},
-},
-{'billing_address': {
-    'city': 'Toronto',
-    'country': 'Burkina Faso',
-    'country_code': 'BF',
-    'fax': None,
-    'phone': '9090909090',
-    'postal_code': 'L9j4A7',
-    'state': 'British Columbia',
-    'state_id': 147,
-    'street': '25 Street   ',
-    'street2': None},
-}
-}
-   {
- 'name': 'XYZ Inc',
- 'old_id': 'xyz123',
- 'site_url': 'https://xyz.com',
- 'created_on': '2018-08-28T05:26:03.848',
- 'def_company': 'XYZ Consultancy',
- 'id': '4d66106b0640fd7805f807e2',
- {'billing_address': {
-    'city': 'Toronto',
-    'country': 'Burkina Faso',
-    'country_code': 'BF',
-    'fax': None,
-    'phone': '9090909090',
-    'postal_code': 'L9j4A7',
-    'state': 'British Columbia',
-    'state_id': 147,
-    'street': '25 Street   ',
-    'street2': None},
-},
- 'companies': [
-	{'desc': None, 'name': 'XYZ Inc', 'url': None},
-	{'desc': 'Description for XYZ Exports','name': 'ABC Exports','url': 'https://abcexports.com'},
-	{'desc': 'Description for XYZ Consultancy', 'name': 'ABC Consultancy','url': 'https://abcconsultancy.com'},
-	],
- 'users': [
-	{'first_name': 'Admin', 'id': '5d66106c0640fd7805f8078', 'last_name': 'V','access_group': 'admin', 'email': 'admin@xyz.com'},
-	{,'first_name': 'Kris', 'id': '5d66106c0640fd7805f807','last_name': 'may','access_group': 'LA', 'email': 'km@example.com'}]},
-},
-
-    ]
-    }
+  {
+   "name": "ABC Inc",
+   "old_id": "abc123",
+   "site_url": "https://abc.com",
+   "created_on": "2019-08-28T05:26:03.848",
+   "def_company": "ABC Consultancy",
+   "id": "5d66106b0640fd7805f807e2",
+   "billing_address": {
+      "city": "Miami",
+      "country": "United States",
+      "country_code": "US",
+      "fax": "+1 323 555 1234",
+      "phone": "+1-541-754-3010",
+      "postal_code": "32024",
+      "state": "Florida",
+      "state_id": 54,
+      "street": "Street",
+      "street2": ""
+    },
+   "companies": [
+      	{"desc": "", "name": "ABC Inc", "url": ""},
+      	{"desc": "Description for ABC Exports","name": "ABC Exports","url": "https://abcexports.com"},
+      	{"desc": "Description for ABC Consultancy", "name": "ABC Consultancy","url": "https://abcconsultancy.com"},
+  	  ],
+   "users": [
+      	{"first_name": "Admin", "id": "5d66106c0640fd7805f807e6", "last_name": "V","access_group": "admin", "email": "admin@abc.com"},
+      	{"first_name": "Kristin", "id": "5d66106c0640fd7805f807e7","last_name": "may","access_group": "LA", "email": "km@example.com"}
+      ]
+  },
+,
+{
+   "name": "XYZ Inc",
+   "old_id": "xyz123",
+   "site_url": "https://xyz.com",
+   "created_on": "2018-08-28T05:26:03.848",
+   "def_company": "XYZ Consultancy",
+   "id": "5d63456b0640fd7805f807e2",
+   "billing_address": {
+      "city": "Toronto",
+      "country": "Canada",
+      "country_code": "CA",
+      "fax": "+1 323 555 3456",
+      "phone": "+1-555-555-5555",
+      "postal_code": "M4B 1B3",
+      "state": "Ontario",
+      "state_id": 54,
+      "street": "Street",
+      "street2": ""
+    },
+   "companies": [
+        {"desc": "", "name": "XYZ Inc", "url": ""},
+        {"desc": "Description for XYZ Exports","name": "XYZ Exports","url": "https://xyzexports.com"},
+        {"desc": "Description for XYZ Consultancy", "name": "XYZ Consultancy","url": "https://xyzconsultancy.com"},
+      ],
+   "users": [
+        {"first_name": "Admin", "id": "5d66106c0646665f807e6", "last_name": "V","access_group": "admin", "email": "root@xyz.com"},
+        {"first_name": "Kris", "id": "5d66106c06666d7805f807e7","last_name": "may","access_group": "LA", "email": "krisexample.com"}
+      ]
+  }
   ]
 }
 
