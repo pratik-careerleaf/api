@@ -24,7 +24,7 @@ Use this API to migrate your existing employers (company info and users) to the 
 
 #### Request BODY
 Below sample data will create employer 'ABC INC' with 3 companies 'ABC INC', 'ABC Consultancy' and 'ABC Exports' and 2 users. 
-By default 'ABC INC' will be the default company. However, the flag 'is_default=1' will overwiter and make 'ABC Consultancy' as default company.
+By default 'ABC INC' will be the default company with description "ABC Inc description" . However, the flag 'is_default=1' will overwrite and make 'ABC Consultancy' as default company.
 
 Note: the following is not a valid *JSON* document, given that it has comments. Your actual request shouldn't have them. Take a look at the sample GET response below for an example of valid JSON.
 
@@ -34,6 +34,7 @@ Note: the following is not a valid *JSON* document, given that it has comments. 
       "name": "ABC Inc", //required
       "site_url": "https://abc.com",
       "old_id": "abc123", //required
+      "desc": "ABC Inc description",
       "billing_address":{
         "city": "Miami",
         "fax": "+1 323 555 1234",
@@ -113,7 +114,7 @@ Note: the following is not a valid *JSON* document, given that it has comments. 
       "street2": ""
     },
    "companies": [
-      	{"desc": "", "name": "ABC Inc", "url": ""},
+      	{"desc": "ABC Inc description", "name": "ABC Inc", "url": ""},
       	{"desc": "Description for ABC Exports","name": "ABC Exports","url": "https://abcexports.com"},
       	{"desc": "Description for ABC Consultancy", "name": "ABC Consultancy","url": "https://abcconsultancy.com"},
   	  ],
