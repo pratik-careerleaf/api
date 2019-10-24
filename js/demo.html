@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script src="JobRoll.js">
+
+</script>
+
+<script>
+var article = document.getElementsByTagName('body')[0];
+var JSONarg = JSON.stringify({"companies":[{"name":"CyberCoders"}]});
+
+new JobRoll(article, JSONarg);
+
+</script>
+</body>
+</html>
