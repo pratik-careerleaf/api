@@ -1,4 +1,4 @@
-
+//This function creates the grid object and places it in the given body element.
      function grid(body)
      {
           console.log("creating grid");
@@ -47,6 +47,7 @@
           return jobLists;
      }
 
+     //This function adds a grid item to the grid box given the job details.
      function gridItem(gridBox, jobtitle, jobCats, shortDesc, location, salary, link, imgLink)
      {
           console.log("creating grid item");
@@ -175,6 +176,7 @@
           console.log("finished creating grid item");
      }
 
+     //Add thumbnail image to the element to represent the logo.
      function addImage(item, img)
      {
          var imgEl = document.createElement("img");
@@ -185,11 +187,13 @@
          item.appendChild(imgEl);
      }
 
+     //This function returns the url of given the page and the stringified search object.
 function getURL(pageNum, search)
 {
 	return "https://workthenorth.com/app/api/v1/job-search?ctype=json&page="+pageNum+"&page_size=9&search="+search;
 }
 
+//Create a link tag given a url to a stylesheet.
 function getStyleSheet(id, url)
 {
 	var head = document.getElementsByTagName("head")[0];
@@ -202,6 +206,7 @@ function getStyleSheet(id, url)
     link.setAttribute("media", "all");
 }
 
+//Create a style element in the head.
 function setStyle(content)
 {
 	 var head = document.getElementsByTagName("head")[0];
@@ -210,6 +215,7 @@ function setStyle(content)
 	 style.innerHTML = content;
 }
 
+//Parameters for the job roll are an element (body) and search (JSON string of search object).
 function JobRoll(body, search)
 {
      var pageNum = 1;
@@ -219,6 +225,7 @@ function JobRoll(body, search)
      console.log(url);
      request.open("GET", url);
      
+     //This code obtains the css that the page will use.
      getStyleSheet('awsm-jobs-general-css', 'https://canadianpayrollservices.com/wp-content/plugins/wp-job-openings/assets/css/general.min.css?ver=1.4.2');
      getStyleSheet('awsm-jobs-style-css', 'https://canadianpayrollservices.com/wp-content/plugins/wp-job-openings/assets/css/general.min.css?ver=1.4.2');
      getStyleSheet('rtotpg-css', 'https://canadianpayrollservices.com/st-ging/wp-content/plugins/the-post-grid/assets/css/thepostgrid.css?ver=2.3.1');
@@ -251,6 +258,7 @@ function JobRoll(body, search)
      getStyleSheet('sccss_style-css','https://canadianpayrollservices.com/st-ging/?sccss=1&#038;ver=5.2.3');
      getStyleSheet('wpstg-admin-bar-css','https://canadianpayrollservices.com/st-ging/wp-content/plugins/wp-staging/apps/Backend/public/css/wpstg-admin-bar.css?ver=2.6.2');
      
+     //Needed to override some css because it wasn't being applied on the page.
      setStyle(".awsm-grid-item{float:left;width:33.333% !important;padding:0 15px!important;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-flex-direction:column}");
      setStyle(".awsm-job-item{margin-bottom:30px;-webkit-box-shadow:0 5px 15px 0 rgba(0,0,0,.13);box-shadow:0 5px 15px 0 rgba(0,0,0,.13);border:1px solid #ececec;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-flex-direction:column;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-webkit-flex-grow:1;-webkit-transition:all .3s ease;transition:all .3s ease}");
      setStyle(".awsm-grid-item .awsm-job-item:focus,.awsm-grid-item .awsm-job-item:hover{-webkit-box-shadow:0 5px 20px 0 rgba(0,0,0,.23);box-shadow:0 5px 20px 0 rgba(0,0,0,.23)}");
@@ -264,14 +272,22 @@ function JobRoll(body, search)
      setStyle(".awsm-row .awsm-load-more-main{padding:0 15px;width:100%}");
      
      var gr = grid(body);
+     //When the request page loads.
      request.onload= function () {
                 var json = JSON.parse(request.responseText);
                 console.log(json);
                 
-               
                 var jobs = json.jobs;
                 var i = 0;
                 
+                //Print message if no jobs are posted.
+                if (jobs==null || jobs.length==0)
+                {
+                	gr.innerHTML = "Currently no jobs available. Check back later for updates.";
+                	return;
+                }
+                
+                //Create grid item for each job.
                 for (i = 0;i<jobs.length;i++)
                 {
                      var title = jobs[i].title;
@@ -291,6 +307,7 @@ function JobRoll(body, search)
                 var bStyle="height:60px;width:100%";
                 loadMore.setAttribute("style", bStyle);
 
+                //When the "Load More" button is clicked, this function is called.
                 function changePage(forward)
                 {
                     var change= new XMLHttpRequest();
@@ -302,12 +319,15 @@ function JobRoll(body, search)
                          var changeJSON = JSON.parse(change.responseText);
                          console.log(changeJSON);
                          var changeJobs = changeJSON.jobs;
+                         //There are no more jobs left, return. 
                          if (changeJobs.length==0)
                          {
+                        	 //Undo page increment if pageNum > 1.
                              if (forward && pageNum>1) pageNum--;
                              return;
                          }
                          var j;
+                         //Create a new grid item for every job.
                          for (j = 0;j<changeJobs.length;j++)
                          {
                              var title = changeJobs[j].title;
@@ -324,6 +344,7 @@ function JobRoll(body, search)
                 }
 
                  loadMore.onclick = function() {
+                	 //Increment the page and load the next page.
                       pageNum++;
                       changePage(false);
                  }
