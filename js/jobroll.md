@@ -124,3 +124,40 @@ service.search(search)
 
 [job-search-api]: https://github.com/careerleaf/api/blob/master/sections/job-search.md
 [jobroll-css]: https://github.com/careerleaf/api/blob/master/js/jobroll-css.md
+
+#Deployment In Website
+
+## In Wordpress
+
+The job roll widget takes a DOM element and a JSON search object and adds the job roll widget to the bottom of the body.
+Download, install, and activate the Shortcoder plugin (https://wordpress.org/plugins/shortcoder/). Create a new 
+shortcode and name it "JobRoll". Copy and paste the code of the JobRoll.js file into the shortcode within a <script> 
+element. Add the following code to the <script>  element:
+
+var article = document.getElementsByTagName('body')[0];
+var JSONarg = JSON.stringify({"companies":[{"name":"CyberCoders"}]});
+new JobRoll(article, JSONarg);
+
+In the above code, you can change the object within the JSON.stringify call to modify the search parameters according 
+to the following format:
+
+var search = {
+        page_size: 5,
+        page: 1,
+        keywords: 'test', 
+        location: {
+            city: 'Toronto', 
+            country: 'CA',
+        }, 
+        job_types: [{slug: 'contract'}, {slug: 'full_time'}],  
+        companies: [{name: "Richmond Company"}], 
+        categories: [{name: "Advertising"}]
+     }
+
+You may need to update the grid function to place the grid in a different location. If the page already has an element 
+that spans the whole page, then the grid needs to be placed within that element.
+
+In Wordpress admin, go into the "Careers" page where you want to deploy the job roll. Edit the textbox where you want 
+the job roll widget to appear and and the tag [sc name="JobRoll"]. Save and update.
+
+
